@@ -1,0 +1,22 @@
+{
+  "name": "nem",
+  "version": "1.0.0",
+  "description": "TODO app: Learning NodeJS, ExpressJS, MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaiRajeshwari/NEM.git"
+  },
+  "author": "SaiRajeshwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaiRajeshwari/NEM/issues"
+  },
+  "homepage": "https://github.com/SaiRajeshwari/NEM#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
