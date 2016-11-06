@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended:true}))
 
 const MongoClient = require('mongodb').MongoClient
+
+app.set('view engine', 'ejs')
 ////////////////////////////////////////////////////////
 
 var db;
@@ -20,13 +22,10 @@ MongoClient.connect('mongodb://sai:sai@ds145677.mlab.com:45677/inspirational-quo
 })
 
 
-
 app.get('/', (req, res) => {
-	//res.send('Hello World')
-	console.log('__dirname : ' + __dirname)
-	res.sendFile(__dirname + '/index.html')
-	db.collection('quotes').find().toArray(function(err, results){
-		console.log(results)
+	db.collection('quotes').find().toArray((err, result) => {
+		if(err) return console.log(err)
+		res.render('index.ejs', {quotes: result})
 	})
 })
 
@@ -38,6 +37,8 @@ app.post('/quotes', (req, res) => {
 		res.redirect('/')
 	})
 })
+
+
 
 
 
